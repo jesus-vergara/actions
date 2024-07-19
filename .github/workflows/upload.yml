@@ -36,4 +36,4 @@ jobs:
 
       - name: Print contents
         run:
-          cat /home/runner/work/actions/actions/file
+          ls /home/runner/work/actions/actions
