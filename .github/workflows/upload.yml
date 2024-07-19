@@ -36,4 +36,4 @@ jobs:
 
       - name: Print contents
         run:
-          ls /home/runner/work/actions/actions
+          cat /home/runner/work/actions/actions/new_file.txt
