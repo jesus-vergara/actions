@@ -6,14 +6,10 @@ on:
 jobs:
   codeql:
     name: CodeQL Analysis
-    runs-on: ubuntu-latest
+    uses: jesus-vergara/.github/.github/workflows/codeql.yml@main
     
     permissions:
       security-events: write
-      
-    steps:
-    - name: Run Template
-      uses: jesus-vergara/.github/.github/workflows/codeql.yml@main
 
   upload:
     name: Upload
