@@ -8,6 +8,10 @@ jobs:
     name: Analyze
     runs-on: ubuntu-latest
 
+    permissions:
+      # required for all workflows
+      security-events: write
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
