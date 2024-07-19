@@ -4,6 +4,10 @@ on:
   push:
 
 jobs:
+  codeql:
+    name: CodeQL Analysis
+    uses: jesus-vergara/.github/.github/workflows/codeql.yml@main
+
   upload:
     name: Upload
     runs-on: ubuntu-latest
