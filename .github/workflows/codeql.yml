@@ -1,0 +1,19 @@
+name: Node.js CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Analize
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Initialize Code QL
+      uses: github/codeql-action/init@v2
+
+    - name: Perform QL Analysis
+      uses: github/codeql-action/analyze@v2
