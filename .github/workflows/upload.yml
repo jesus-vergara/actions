@@ -4,8 +4,8 @@ on:
   push:
 
 jobs:
-  build:
-    name: Build
+  upload:
+    name: Upload
     runs-on: ubuntu-latest
 
     steps:
@@ -22,4 +22,18 @@ jobs:
           name: file
           path: new_file.txt
 
-  
+
+  download:
+    name: Download
+    runs-on: ubuntu-latest
+    needs: upload
+
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: file
+
+      - name: Print contents
+        run:
+          cat file
