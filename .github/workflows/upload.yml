@@ -1,1 +1,25 @@
+name: "upload"
 
+on:
+  push:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Create new file
+        run:
+          echo "This is a new file" > new_file.txt
+    
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: file
+          path: new_file.txt
+
+  
